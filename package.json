@@ -27,5 +27,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "antd": "^3.26.0",
+    "babel-plugin-import": "^1.13.0",
+    "react-router-dom": "^5.1.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2"
   }
 }
