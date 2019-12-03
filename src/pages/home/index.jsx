@@ -1,44 +1,68 @@
-import React, {Component} from 'react';
-import {Avatar, Button} from 'antd';
-import {Text} from  "react";
+import React from 'react';
+import {Avatar, Button, Row, Col} from 'antd';
+import avatar from './../../asset/images/avatar.jpg';
+import './index.less'
+
+// import {Text} from  "react";
 class Home extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            name : "Yu Zhang",
+            name: "Yu Zhang",
             color: 0xFF00FF,
             user: "我也不知道现在放点啥好",
-            profession: "电冰箱，电视，修理",
-
+            profession: "回收旧电视，冰箱，洗衣机，电脑手机电动车",
         }
     }
+
     render() {
         return (
-            <div>
+            <div className="home-view">
 
-                lkjhgfjkljlsdafgdfgfdhsga
-                <Avatar style={{backgroundColor: this.state.color, verticalAlign: 'middle'}} size="large">
-                    {this.state.user}
-                </Avatar>
+                <div className="avatar-view">
+                    <Avatar
+                        style={{
+                            backgroundColor: this.state.color,
+                            verticalAlign: 'middle',
+                            width: '150px',
+                            height: '150px'
+                        }}
 
-                <Text>
+                        shape='circle' src={avatar}>
+                        {this.state.user}
+                    </Avatar>
+                </div>
+
+                <div>
+                <span className='name'>
                     {this.state.name}
-                </Text>
+                </span>
+                </div>
 
-                <Text>
+                <div className='profession'>
+                <span className="profession-text">
                     {this.state.profession}
-                </Text>
+                </span>
+                </div>
 
-                <Button>Twitter</Button>
-                <Button>Twitter</Button>
-                <Button>Twitter</Button>
-                <Button>Twitter</Button>
-                <Button>Twitter</Button>
-                <Button>Twitter</Button>
+                <Row>
+                    <Col span={8}> <Button>Twitter</Button> </Col>
+                    <Col span={8}> <Button>Twitter</Button> </Col>
+                    <Col span={8}> <Button>Twitter</Button> </Col>
+                </Row>
+
+                <Row>
+                    <Col span={8}> <Button>Twitter</Button> </Col>
+                    <Col span={8}> <Button>Twitter</Button> </Col>
+                    <Col span={8}> <Button>Twitter</Button> </Col>
+                </Row>
             </div>
         );
     }
 }
 
 export default Home;
+
+//问题1: span如何让span独占一行
+

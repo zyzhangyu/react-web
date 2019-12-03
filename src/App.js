@@ -1,18 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import {Home} from './pages/home/index.jsx';
-import { BrowserRouter, Route, } from "react-router-dom";
+import { BrowserRouter, Route,Switch, HashRouter } from "react-router-dom";
+import Home from  './pages/home/index'
 
-function App() {
-    return (
-        <HashRouter>
-            <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/detail" component={Detail}/>
-            </Switch>
-        </HashRouter>
-    );
+
+
+class App extends Component {
+
+    render() {
+        return (
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/Home" component={Home}></Route>
+                    <Route exact path="/posts" component={Home}></Route>
+                </Switch>
+            </BrowserRouter>
+        );
+    }
 }
 
 
