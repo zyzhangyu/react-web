@@ -1,15 +1,14 @@
 import React from 'react';
-import {Avatar, Button, Row, Col} from 'antd';
+import {Avatar, Button, Row, Col, Icon} from 'antd';
 import avatar from './../../asset/images/avatar.jpg';
 import './index.less'
 
-// import {Text} from  "react";
 class Home extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            name: "Yu Zhang",
+            name: "破烂王章鱼哥",
             color: 0xFF00FF,
             user: "我也不知道现在放点啥好",
             profession: "回收旧电视，冰箱，洗衣机，电脑手机电动车",
@@ -20,13 +19,14 @@ class Home extends React.Component {
         return (
             <div className="home-view">
 
+
+
                 <div className="avatar-view">
                     <Avatar
                         style={{
-                            backgroundColor: this.state.color,
                             verticalAlign: 'middle',
-                            width: '150px',
-                            height: '150px'
+                            width: '250px',
+                            height: '250px'
                         }}
 
                         shape='circle' src={avatar}>
@@ -46,16 +46,16 @@ class Home extends React.Component {
                 </span>
                 </div>
 
-                <Row>
-                    <Col span={8}> <Button>Twitter</Button> </Col>
-                    <Col span={8}> <Button>Twitter</Button> </Col>
-                    <Col span={8}> <Button>Twitter</Button> </Col>
+                <Row type="flex" justify="center" align="middle">
+                    <Col className="item" span={6}> <Button className="button-g">Twitter</Button> </Col>
+                    <Col className="item" span={6}> <Button className="button-t">Twitter</Button> </Col>
+                    <Col className="item" span={6}> <Button className="button-m">Twitter</Button> </Col>
                 </Row>
 
-                <Row>
-                    <Col span={8}> <Button>Twitter</Button> </Col>
-                    <Col span={8}> <Button>Twitter</Button> </Col>
-                    <Col span={8}> <Button>Twitter</Button> </Col>
+                <Row type="flex" justify="center" align="middle">
+                    <Col className="item" span={7}> <Button className="button-i">Twitter</Button> </Col>
+                    <Col className="item" span={7}> <Button className="button-f">Twitter</Button> </Col>
+                    <Col className="item" span={7}> <Button className="button-l">Twitter</Button> </Col>
                 </Row>
             </div>
         );

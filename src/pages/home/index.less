@@ -1,49 +1,118 @@
+@github: './../../asset/images/github.png';
+@instagram: './../../asset/images/instagram.png';
+@facebook: './../../asset/images/facebook.png';
+@linkedin: './../../asset/images/linkedin.png';
+@twitter: './../../asset/images/twitter.png';
+@moon: './../../asset/images/moon.png';
+
 
 .home-view {
   width: 100%;
-
+  //height: 100%;
+  background: black;
+  height: 100%;
   .avatar-view {
     text-align: center;
     width: 100%;
-    background: beige;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
 
+    //background: beige;
+    padding-top: 150px;
+    margin-bottom: 50px;
+
+  }
 
 
   .name {
     text-align: center;
     font-size: 24px;
     font-weight: 700;
-    display:block;
+    display: block;
     width: 100%;
-    color: red;
-    background: #09d3ac;
+    color: white;
+    //background: #09d3ac;
   }
 
   .profession {
-    text-align: center;
-    vertical-align: center;
+    //text-align: center;
+    //vertical-align: center;
     //display:block;
+    //background: blueviolet;
+    height: 80px;
     width: 100%;
-    background: blueviolet;
-    height: 100px;
+    position: relative;
+    margin-bottom: 50px;
   }
 
   .profession-text {
-    //position:absolute;
-    //top: 50%;
-    //left: 50%;
-    //width: 50%;
-    //transform: translate(-50%, -50%);
-    //display: inline;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 50%;
-    //line-height: 50px;
+    transform: translate(-50%, -50%);
     display: block;
-    background: beige;
+    //background: beige;
+    color: white;
+    text-align: center;
+
   }
 
+
+  .button {
+    height: 32px;
+    padding-left: 36px;
+    border: 1px solid #000;
+    //background: red url(@github) no-repeat 10px center;
+    background-size: 16px 16px;
+    color: white;
+  }
+
+  .button-g {
+    background:  url(@github) no-repeat 10px center;
+    .button();
+
+  }
+
+  .button-t {
+    background:  url(@twitter) no-repeat 10px center;
+    .button();
+
+  }
+
+  .button-m {
+    background:  url(@moon) no-repeat 10px center;
+    .button();
+
+  }
+
+  .button-i {
+    background:  url(@instagram) no-repeat 10px center;
+    .button();
+
+  }
+
+  .button-f {
+    background:  url(@facebook) no-repeat 10px center;
+    .button();
+
+  }
+
+  .button-l {
+    background:  url(@linkedin) no-repeat 10px center;
+    .button();
+
+  }
+
+  .tempStyle {
+    width: 100px;
+    height: 100px;
+    background: brown;
+  }
+
+
+  .item {
+    //background: #09d3ac;
+    text-align: center;
+  }
 
 }
 
