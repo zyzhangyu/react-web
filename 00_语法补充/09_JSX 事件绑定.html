@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add React in One Minute</title>
+  </head>
+  <body>
+ 
+    <!-- We will put our React component inside this div. -->
+    <div id="app"></div>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+     <!-- Don't use this in production: -->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+    
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+              message:"你好呀"
+          };
+
+          {/*在初始化的时候直接绑定*/}
+          this.buttonClick = this,buttonClick.bind(this);
+        }
+
+
+        render() {
+          return (
+            <div>
+                Hello,World!
+                {/*方案1----显示绑定 通过bind */}
+                <button onClick={this.buttonClick.bind(self)}>按钮1</button>
+                {/*方案2----在初始化的时候绑定也可以*/}
+                <button onClick={this.buttonClick}>按钮2</button>
+                {/*方案3----es6中的箭头函数 */}
+                <button onClick={this.buttonClick2}>按钮3</button>
+                {/*方案4----直接写表达式箭头函数  或者在表达式里直接调用其他方法 这里this也能找得到 因为函数体就在this里*/}
+                <button onClick={表达式}>按钮4</button>
+                <button onClick={()=>{
+
+                }}>按钮3</button>
+
+            </div>
+          );
+        }
+ 
+        buttonClick(){
+          console.log("按钮发生电击")
+          console.log(this.state.message)
+        }
+
+
+        // {/*箭头函数中永远不绑定this*/}
+        buttonClick2 = () => {
+            //会向上一个作用域找 找不到继续向上
+            console.log(this.state.message)
+            message
+        }
+      }
+
+   
+
+      ReactDOM.render(
+        // React.createElement(<MoviesList/>),
+        <App/>,
+        document.getElementById('app')
+      )
+    </script>
+  </body>
+</html>

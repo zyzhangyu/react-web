@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add React in One Minute</title>
+  </head>
+  <body>
+ 
+
+    <!-- We will put our React component inside this div. -->
+    <div id="movieslist"></div>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+     <!-- Don't use this in production: -->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+    
+      class MoviesList extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            message: "Hello World",
+            movies: ["努力奋斗", "好好学习", "把事做好", "高兴快乐并幸福"],
+            liked: false,
+          };
+        }
+        render() {
+          const liArray = [];
+
+          ///for 循环的用法
+          for (let movie in this.state.movies) {
+            liArray.push(<li key={movie}>{movie}</li>);
+          }
+          for (let movie of this.state.movies) {
+            liArray.push(<li key={movie}>{movie}</li>);
+          }
+          return (
+            <div>
+              <h2>美好列表</h2>
+              <ul>{liArray}</ul>
+
+              <h2>美好列表2</h2>
+              <ul>
+                {
+                    this.state.movies.map((item, index, arr)=>{
+                        return <li key={index}>{index}{"-"}{item}</li>
+                    })
+                }
+              </ul>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        // React.createElement(<MoviesList/>),
+        <MoviesList/>,
+        document.getElementById('movieslist')
+      )
+    </script>
+  </body>
+</html>

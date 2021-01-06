@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add React in One Minute</title>
+  </head>
+  <body>
+ 
+    <!-- We will put our React component inside this div. -->
+    <div id="app"></div>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+     <!-- Don't use this in production: -->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+    
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+              //1.在{}中可以正常显示的内容
+              name:"why",
+              age:18,
+              names:["aaa","bbb"],
+
+              //2.在{}中不能显示() 不显然
+              test1:null,
+              test2:undefined,
+              test3:false,
+
+              flag: true,
+
+              ///3.对象不能做jsx的子类
+              friend: {
+                name: "kobe",
+                age: "40"
+              }
+
+          };
+        }
+        render() {
+          return (
+            <div>
+                <h2>{this.state.name}</h2>
+                <h2>{this.state.age}</h2>
+                <h2>{this.state.names}</h2>
+
+                ///null, undefined, bool类型是不显示的
+                <h2>{this.state.test1}</h2>
+                <h2>{this.state.test2}</h2>
+                <h2>{this.state.test3}</h2>
+
+                <h2>{flag?"你好":null}</h2>
+                <h2>{flag && "你好呀"}</h2>
+
+
+                //把不渲染的类型转成string就可以显示
+                <h2>{this.state.flag.toStirng()}</h2>
+                <h2>{String(this.state.text2)}</h2>
+                <h2>{this.state.test1 + ""}</h2>
+
+                ///对象类型不能直接放到render里进行渲染
+                <h2>{this.state.friend}</h2>
+
+
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        // React.createElement(<MoviesList/>),
+        <App/>,
+        document.getElementById('app')
+      )
+    </script>
+  </body>
+</html>

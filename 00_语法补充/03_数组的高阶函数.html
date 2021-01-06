@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add React in One Minute</title>
+  </head>
+  <body>
+ 
+
+    <!-- We will put our React component inside this div. -->
+    <div id="movieslist"></div>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+     <!-- Don't use this in production: -->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+    
+        ///数组的高阶函数
+        const names = ["abc", "cba", "nba", "mba"];
+
+        names.map(回调函数,给前面的回调函数绑定this)
+
+        /*
+        * 回调函数有三个参数:
+        参数1， 执行时的对应元素
+        参数2, 对应的下标值
+        参数3, 是完整的数组对象
+        */
+        names.map((参数1,参数2,参数3)=>{
+            ///在这个例子中,这个函数会被执行四次
+        })
+
+        names.map((item, index, array) => {
+            return item + "000"
+        })
+    </script>
+  </body>
+</html>
